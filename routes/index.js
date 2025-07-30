@@ -1,6 +1,6 @@
 import express from "express";
 import doctorRoutes from "./doctorRoutes/index.js";
-import departmentRoutes from "./doctorRoutes/index.js";
+import departmentRoutes from"./departmentRoutes/index.js";
 import imageRoutes from "./imageRoutes/index.js";
 const router = express.Router();
 

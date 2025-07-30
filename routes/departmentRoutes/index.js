@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   const body = { ...req.body };
-  await Department.create(body);
+  await Department.create(body); 
  return res.status(201).json({ mssage: "Department added successfully" });
 });
 router.get("/", async (req, res) => {
