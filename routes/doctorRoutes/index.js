@@ -16,8 +16,9 @@ router.post("/signup", async (req, res) => {
     return res.status(403).json({ message: "password dont match" });
   }
 
-  const hashedPassword = await bcrypt.hash(body.password, 2);
+  const hashedPassword = await bcrypt.hash(body.password,2);
   body.password = hashedPassword;
+  
   await Doctor.create(body);
 
   return res.status(201).json({ mssage: "signup successfull" });
