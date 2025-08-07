@@ -46,5 +46,12 @@ router.post("/login", async (req, res) => {
 
   return res.status(201).json({ message: "login successfull", token: token });
 });
+// // get user by id
+router.get("/profile/:id", async (req, res) => {
+  const { id } = req.params;
+  const user = await User.findById(id);
+  user.password='';
+  res.status(200).json(user);
+});
 
 export default router;
